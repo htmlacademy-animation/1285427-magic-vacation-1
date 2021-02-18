@@ -1,6 +1,6 @@
 # Личный проект «Таинственный отпуск» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
-* Студент: [Неопознанный енот](https://up.htmlacademy.ru/animation/1/user/1285427).
+* Студент: [Антон Пермяков](https://up.htmlacademy.ru/animation/1/user/1285427).
 
 ---
 
