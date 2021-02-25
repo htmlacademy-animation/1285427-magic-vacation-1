@@ -13,7 +13,8 @@ export default class FullPageScroll {
   }
 
   init() {
-    document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
+    /* todo удалена постановка на событие wheel, ибо грешно так делать. Да простит их UX.
+        Если уж неверные заставят вернуть слушателя на wheel, то смотри дочерний коммит 5f927756 */
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
     this.onUrlHashChanged();
