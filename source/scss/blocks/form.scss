@@ -2,6 +2,13 @@
   position: relative;
   display: flex;
   align-items: center;
+  width: 27rem;
+  margin-left: auto;
+
+  .screen.active & {
+    width: 100%;
+    transition: width 400ms ease-in;
+  }
 }
 
 .form__label {
@@ -32,7 +39,6 @@
 .form__field {
   flex: none;
   margin-right: 3rem;
-  padding: 0 5.6rem;
   height: 6rem;
   width: calc(100% - 21rem);
   text-transform: uppercase;
@@ -43,6 +49,14 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  padding: 0;
+  opacity: 0;
+
+  .screen.active & {
+    opacity: 1;
+    padding: 0 5.6rem;
+    transition: padding 400ms ease-in;
+  }
 
   &:focus {
     border: 1px solid $c-purple;
