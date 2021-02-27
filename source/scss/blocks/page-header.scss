@@ -35,6 +35,17 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  opacity: 0;
+  transform: translate(-.5em, 0);
+
+  &_active  {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition-property: opacity, transform;
+    transition-duration: .25s;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-delay: .25s;
+  }
 
   @media (min-width: $stop-scaling) {
     top: -5px;
