@@ -48,9 +48,9 @@
   z-index: 1;
   transform: translate(0, 100%);
 
-  .screen.active & {
+  .body_load & {
     transform: translate(0, 0);
-    transition: transform .3s linear .1s;
+    transition: transform 250ms linear 200ms;
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {

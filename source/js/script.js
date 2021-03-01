@@ -1,4 +1,5 @@
 // modules
+import initialScripts from './modules/initialScripts';
 import waveLetter from './modules/waveLetter';
 import mobileHeight from './modules/mobile-height-adjust.js';
 import slider from './modules/slider.js';
@@ -11,6 +12,7 @@ import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 
 // init modules
+initialScripts();
 waveLetter();
 mobileHeight();
 slider();

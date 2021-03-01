@@ -17,7 +17,11 @@ export default class FullPageScroll {
         Если уж неверные заставят вернуть слушателя на wheel, то смотри дочерний коммит 5f927756 */
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
-    this.onUrlHashChanged();
+    if (document.readyState === `complete`) {
+      this.onUrlHashChanged();
+    } else {
+      window.addEventListener(`load`, this.onUrlHashChengedHandler);
+    }
   }
 
   onScroll(evt) {

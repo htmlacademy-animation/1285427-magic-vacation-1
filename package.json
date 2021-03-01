@@ -41,7 +41,8 @@
     "build": "webpack",
     "webp": "gulp webp",
     "sprite": "gulp sprite",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "start_silence": "webpack-dev-server"
   },
   "browserslist": [
     "last 2 versions",
