@@ -10375,9 +10375,11 @@ class FullPageScroll {
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   window.addEventListener(`load`, () => {
-    document
-      .querySelector(`body`)
-      .classList.add(`body_load`);
+    setInterval(() => {
+      document
+        .querySelector(`body`)
+        .classList.add(`body_load`);
+    }, 1);
   });
 });
 
