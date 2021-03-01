@@ -1,7 +1,9 @@
 export default () => {
   window.addEventListener(`load`, () => {
-    document
-      .querySelector(`body`)
-      .classList.add(`body_load`);
+    setInterval(() => {
+      document
+        .querySelector(`body`)
+        .classList.add(`body_load`);
+    }, 1);
   });
 };
