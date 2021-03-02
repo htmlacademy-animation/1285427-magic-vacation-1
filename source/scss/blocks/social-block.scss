@@ -10,9 +10,10 @@
         opacity: 1;
         transform: translateY(0);
       }
+
       @for $i from 1 through 3 {
         li:nth-child(#{$i}) {
-          transition: opacity .6s ease-out #{$i * 150}ms, transform .6s ease-out #{$i * 50}ms;
+          transition: opacity 600ms ease-out #{$i * 150}ms, transform 60ms ease-out #{$i * 50}ms;
         }
       }
     }
@@ -20,7 +21,7 @@
     .social-block__toggler {
       color: $c-light;
 
-      &:before {
+      &::before {
         background-color: $c-purple;
         border: 2px solid $c-purple;
       }
@@ -28,7 +29,7 @@
       &:hover {
         color: $c-purple;
 
-        &:before {
+        &::before {
           background-color: $c-light;
           border: 2px solid $c-light;
         }
@@ -45,7 +46,12 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
-  transition: color .5s linear;
+  transition: color 500ms linear, opacity 0s linear 450ms;
+  opacity: 0;
+
+  .body_load & {
+    opacity: 1;
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -58,14 +64,22 @@
   &::before {
     @include center;
     content: "";
-    width: 100%;
-    height: 100%;
+    width: 0;
+    height: 0;
     border-radius: 50%;
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
-    transition-property: width, height, background, border;
+    transition-property: all;
     transition-duration: inherit;
+
+    .body_load & {
+      animation-name: social-toggler-show;
+      animation-duration: 400ms;
+      animation-timing-function: cubic-bezier(0.3, 0.7, 0.35, 1.55);
+      animation-delay: 400ms;
+      animation-fill-mode: forwards;
+    }
   }
 
   svg {
@@ -111,6 +125,18 @@
       background-color: $c-purple;
       border-color: $c-purple;
     }
+  }
+}
+
+@keyframes social-toggler-show {
+  from {
+    width: 0;
+    height: 0;
+  }
+
+  to {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -180,7 +206,7 @@
     margin-bottom: 0.5rem;
     transform: translateY(50%);
     opacity: 0;
-    transition: opacity .2s ease-out, transform 0s ease-out .2s;
+    transition: opacity 200ms ease-out, transform 0s ease-out 200ms;
 
     @media (min-width: $stop-scaling) {
       margin-bottom: 5px;
@@ -204,7 +230,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
-  transition: color .2s ease-in-out;
+  transition: color 200ms ease-in-out;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
